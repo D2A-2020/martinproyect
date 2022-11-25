@@ -1,5 +1,8 @@
 <?php
 
+$name = $POST['name'];
+
+
 // las clases pertenecientes a la carpeta controladores 
 // se encargan de ser intermediarias entre la vista y el mododelo
 // es decir, se encargar de verificar que el usuario que pide la informacion 
@@ -38,11 +41,10 @@ class CPersons extends Connection{
            array_push($table, $tr); //fila actual se agrega a tabla
         }
 
-        return $table;
-        
-        
-        
-        
-        
+        return $table; //juan y de sofia que soon filas
     }
+
+   
+
+
 }

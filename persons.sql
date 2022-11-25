@@ -12,6 +12,7 @@ create table if not exists Person(
 
 insert into Person(ci,`name`, surname, `password`) 
 values(55618820, "juan", "perez", "mateAmargo1");
+
 insert into Person(ci,`name`, surname, `password`) 
 values(55618821, "sofia", "sosa", "mateAmargo2");
 

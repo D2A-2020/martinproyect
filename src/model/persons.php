@@ -20,5 +20,29 @@ class MPersons extends Connection{
         }
         
     }
+
+    function editPerson($id, $ci, $name, $surname, $password){
+
+        $con = $this->con;
+
+        $query = "UPDATE Person SET ci=:ci, `name`=:name, surname= :surname, `password`=:password WHERE id=:id;";                    
+
+        $stmt = $con->prepare($query);
+        
+        $stmt->bindParam(':id',$id);
+        $stmt->bindParam(':ci',$ci);
+        $stmt->bindParam(':name',$name);
+        $stmt->bindParam(':surname',$surname);
+        $stmt->bindParam(':password',$password);
+        
+        try{
+            return $stmt->execute();
+            
+        }catch(Exception $e){
+            return "Hubo un error al realizar la edicion\n". $e->getMessage();
+            
+        }
+        
+    }
 }
 ?>
